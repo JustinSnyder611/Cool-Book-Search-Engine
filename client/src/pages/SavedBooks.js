@@ -7,7 +7,10 @@ import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
-  useQuery(GET_ME);
+  const [userData, setUserData] = useState({});
+
+
+  useQuery(getMe);
 
   // use this to determine if `useEffect()` hook needs to run again
   const userDataLength = Object.keys(userData).length;
@@ -41,7 +44,7 @@ const SavedBooks = () => {
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-    useMutation(REMOVE_BOOK)
+    useMutation(deleteBook)
     if (!token) {
       return false;
     }
