@@ -7,7 +7,7 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider>
       <Router>
         <>
           <Navbar />
