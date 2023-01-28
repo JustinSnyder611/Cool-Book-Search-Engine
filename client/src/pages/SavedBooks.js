@@ -44,7 +44,7 @@ const SavedBooks = () => {
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-    useMutation(deleteBook)
+
     if (!token) {
       return false;
     }

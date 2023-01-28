@@ -58,7 +58,6 @@ const SearchBooks = () => {
     // find the book in `searchedBooks` state by the matching id
     const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
     // use mutation to save the book to the database
-    useMutation(saveBook)
 
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
